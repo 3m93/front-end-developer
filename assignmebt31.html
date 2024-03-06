@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+</head>
+<body>
+
+<button onclick="inputEmployee()">Input Employee</button>
+<button onclick="displayAllEmployees()">Display All Employees</button>
+
+<table id="employeeTable" border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+    </tr>
+</table>
+
+<script>
+    // JSON array to store employee data
+    let employees = [];
+
+    // Function to input employee data
+    function inputEmployee() {
+        const id = prompt("Enter Employee ID:");
+        const name = prompt("Enter Employee Name:");
+        const age = prompt("Enter Employee Age:");
+        const city = prompt("Enter Employee City:");
+
+        // Create employee object
+        const employee = { id, name, age, city };
+
+        // Add employee to the array
+        employees.push(employee);
+    }
+
+    // Function to display all employees in the table
+    function displayAllEmployees() {
+        const table = document.getElementById("employeeTable");
+
+        // Clear existing table rows
+        while (table.rows.length > 1) {
+            table.deleteRow(1);
+        }
+
+        // Add rows for each employee
+        employees.forEach(employee => {
+            const row = table.insertRow(-1);
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            const cell3 = row.insertCell(2);
+            const cell4 = row.insertCell(3);
+
+            cell1.innerHTML = employee.id;
+            cell2.innerHTML = employee.name;
+            cell3.innerHTML = employee.age;
+            cell4.innerHTML = employee.city;
+        });
+    }
+</script>
+
+</body>
+</html>

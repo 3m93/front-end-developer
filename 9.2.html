@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Web Page</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+    .a
+         {
+          width:650px;
+        
+        border-color: black;
+        height: 100px;
+        
+        margin-left: 350px;
+        
+        
+         }
+         </style>
+</head>
+<body>
+  <div class="a">
+  
+  <center><img src="e:\Pictures\Saved Pictures\pak flag.jpg"></center>
+  
+  <h6 style="padding: 1px;">P</h6>
+  <h6 style="padding: 1px;">A</h6>
+  <h6 style="padding: 1px;">K</h6>
+  <h6 style="padding: 1px;">I</h6>
+  <h6 style="padding: 1px;">S</h6>
+  <h6 style="padding: 1px;">T</h6>
+  <h6 style="padding: 1px;">A</h6>
+  <h6 style="padding: 1px;">N</h6>
+</div>
+     <script>
+      $(document).ready(function(){
+        $("#image").hover(function()
+        {
+          $("#overlay").fadeIn(300);
+          $("#text").slideDown(500);
+        },
+        function(){
+          $("#text").slideUp(500,function()
+        {
+          $("#overlay").fadeOut(300);
+        });
+    
+      });
+     </script>     
+  </body>
+  </html>

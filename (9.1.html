@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<style>
+    .a
+         {
+          width:650px;
+        display: block;
+        border-color: black;
+        height: 100px;
+        border-style:solid;
+        margin-left: 350px;
+        border-width: 2px;
+        background-color: rgb(139, 219, 139);
+         }
+         .b
+         {
+          width:250px;
+        display: block;
+        border-color: black;
+        height: 200px;
+        border-style:solid;
+        border-width: 2px;
+        background-color: yellow;
+        transform: left  2s;
+        
+         }
+         .btt{
+            position: fixed;
+            top:380px;
+            left:45%;
+         }
+</style>
+</head>
+<body>
+    <div class="a">
+   
+        <div class="b">
+        </div>
+    </div>
+  <button class="btt" onclick="action()">open/close left panel</button>
+  <script>
+    $(document).ready(function(){
+        $(".btt").click(function(){
+            $(".b").animate({
+                width:"toggle"
+            });
+        });
+    });
+ </script> 
+</body>
+</html>

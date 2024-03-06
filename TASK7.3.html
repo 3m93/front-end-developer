@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      form {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 8px;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </style>
+  <script>
+    function validateForm() {
+      // Rule 1
+      var name = document.getElementById("name").value;
+      if (!/^[a-zA-Z]+$/.test(name)) {
+        alert("Name must contain only alphabets");
+        return false;
+      }
+
+      // Rule 2
+      var zipCode = document.getElementById("zipCode").value;
+      if (!/^\d{1,6}$/.test(zipCode)) {
+        alert("Zip Code must be digits and must not exceed 6 digits");
+        return false;
+      }
+
+      // Rule 3
+      var country = document.getElementById("country").value;
+      if (country === "") {
+        alert("Please select a country");
+        return false;
+      }
+
+      // Rule 4
+      var gender = document.querySelector('input[name="gender"]:checked');
+      if (!gender) {
+        alert("Please select gender");
+        return false;
+      }
+
+      // Rule 5
+      var preferences = document.querySelectorAll('input[name="preferences"]:checked');
+      if (preferences.length === 0) {
+        alert("Please select at least one preference");
+        return false;
+      }
+
+      // Rule 6
+      var phoneNumber = document.getElementById("phoneNumber").value;
+      if (!/^03\d{9}$/.test(phoneNumber)) {
+        alert("Phone number must start with '03' and have 11 digits");
+        return false;
+      }
+
+      // Rule 7
+      var email = document.getElementById("email").value;
+      if (!/\S+@\S+\.\S+/.test(email)) {
+        alert("Email must contain '@' symbol and '.com' at the end");
+        return false;
+      }
+
+      // Rule 8
+      var password = document.getElementById("password").value;
+      if (!/(?=.[A-Z])(?=.[a-z])(?=.\d)(?=.[!@#$%^&*()_+]).{6,8}/.test(password)) {
+        alert("Password must contain an Upper case alphabet, a Lower case alphabet, a special character, and a digit. And it must be between 6-8 characters");
+        return false;
+      }
+
+      // Rule 9
+      var confirmPassword = document.getElementById("confirmPassword").value;
+      if (password !== confirmPassword) {
+        alert("Password and Verify Password must match");
+        return false;
+      }
+
+      // All rules passed
+      alert("Well Done");
+      return true;
+    }
+
+    function clearForm() {
+      document.getElementById("registrationForm").reset();
+    }
+  </script>
+</head>
+<body>
+
+  <form id="registrationForm">
+    <!-- Rule 1: User must enter name and it must contain only alphabets -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required pattern="[A-Za-z]+">
+
+    <!-- Rule 2: Zip Code must be digits and must not exceed 6 digits -->
+    <label for="zipCode">Zip Code:</label>
+    <input type="text" id="zipCode" name="zipCode" required pattern="\d{1,6}">
+
+    <!-- Rule 3: User must select some country -->
+    <label for="country">Country:</label>
+    <select id="country" name="country" required>
+      <option value="">Select Country</option>
+      <!-- Add country options here -->
+      <option value="us">United States</option>
+      <option value="ca">Canada</option>
+      <!-- Add more options as needed -->
+    </select>
+
+    <!-- Rule 4: User must select gender -->
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female" required>
+    <label for="female">Female</label>
+
+    <!-- Rule 5: User must select at least one from preferences -->
+    <label>Preferences:</label>
+    <input type="checkbox" id="preference1" name="preferences" value="preference1">
+    <label for="preference1">Preference 1</label>
+    <input type="checkbox" id="preference2" name="preferences" value="preference2">
+    <label for="preference2">Preference 2</label>
+
+    <!-- Rule 6: Phone number must be a digit and it must start with "03" and must have 11 digits -->
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" name="phoneNumber" required pattern="03\d{9}">
+
+    <!-- Rule 7: Email must contain "@" symbol and ".com" at the end -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <!-- Rule 8: Password must contain an Upper case alphabet, a Lower case alphabet, a special character, and a digit. And it must be between 6-8 characters -->
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required pattern="(?=.[A-Z])(?=.[a-z])(?=.\d)(?=.[!@#$%^&*()_+]).{6,8}">
+
+    <!-- Rule 9: Password and verify password must match -->
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+    <button type="button" onclick="validateForm()">SEND</button>
+    <button type="button" onclick="clearForm()">CLEAR</button>
+  </form>
+</body>
+</html>

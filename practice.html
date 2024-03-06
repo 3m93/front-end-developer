@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewpoint" content="width=device-width,initial scale=1.0">
+        <meta charset="UTF-8">
+        <style>
+            body{
+                background: #333;
+            }
+            .dropdownmenu ul, .dropdownmenu li{
+              margin: 0;
+              padding: 0;
+            }
+            .dropdownmenu ul{
+                background: gray;
+                list-style: none;
+                width: 100%;
+            }
+            .dropdownmenu li{
+                float: right;
+                position: relative;
+                width: auto;
+            }
+            .dropdownmenu a{
+                background: #30a6e6;
+                color: white;
+                display: block;
+                font-weight: 400;
+                font-size: 13px;
+                font-family:'Poppins',scans-serif ;
+                padding: 15px 55px;
+                text-align: center;
+                text-decoration: none;
+                transition: all 0.25s ease;
+            }
+            .dropdownmenu li:hover a{
+                background: #34495e;
+            }
+            #submenu{
+                left: 0;
+                opacity: 0;
+                position: absolute;
+                top: 35px;
+                visibility: hidden;
+                z-index: 1;
+            }
+            li:hover ul#submenu{
+                opacity: 1;
+                top: 80px;
+                visibility: visible;
+            }
+            #submenu li{
+                float: none;
+                width: 100%;
+            }
+            #submenu a:hover{
+                background: #df4b05;
+            }
+            #submenu a{
+                background-color: #34495e;
+            }
+        </style>
+    </head> 
+    <body>
+        <nav class="dropdownmenu">
+           <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Gallery</a>
+            <ul id="submenu">
+                <li><a href="">Svg canva</a></li>
+                <li><a href="">word press</a></li>
+                <li><a href="">css</a></li>
+            </ul>
+            </li>
+            <li><a href="">news</a></li>
+            <li><a href="">contact</a></li>
+           </ul>
+        </nav>
+    </body>
+</html>

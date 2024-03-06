@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Employee Management System</h1>
+
+    <button onclick="inputEmployee()">Input Employee</button>
+    <button onclick="displayAllEmployees()">Display All Employees</button>
+
+    <script>
+        // Initialize JSON arrays for each department
+        let ADMIN = [];
+        let MANAGEMENT = [];
+        let ComouterScience = [];
+
+        function inputEmployee() {
+            // Prompt user for employee type and name
+            const employeeType = prompt("Enter Employee Type (admin/management/CS):").toUpperCase();
+            const employeeName = prompt("Enter Employee Name:");
+
+            // Add employee to the respective array based on type
+            switch (employeeType) {
+                case "ADMIN":
+                    ADMIN.push(employeeName);
+                    break;
+                case "MANAGEMENT":
+                    MANAGEMENT.push(employeeName);
+                    break;
+                case "CS":
+                    ComputerScience.push(employeeName);
+                    break;
+                default:
+                    alert("Invalid Employee Type");
+            }
+        }
+
+        function displayAllEmployees() {
+            // Display employees of all departments in an ordered list
+            document.write("<h2>All Employees</h2>");
+
+            document.write("<h3>Admin Department</h3>");
+            displayEmployees(ADMIN);
+
+            document.write("<h3>Management Department</h3>");
+            displayEmployees(MANAGEMENT);
+
+            document.write("<h3>CS Department</h3>");
+            displayEmployees(ComputerScience);
+        }
+
+        function displayEmployees(employeeArray) {
+            // Display employees in an ordered list
+            if (employeeArray.length === 0) {
+                document.write("<p>No employees in this department</p>");
+            } else {
+                document.write("<ol>");
+                for (let i = 0; i < employeeArray.length; i++) {
+                    document.write("<li>" + employeeArray[i] + "</li>");
+                }
+                document.write("</ol>");
+            }
+        }
+        
+    </script>
+
+</body>
+</html>

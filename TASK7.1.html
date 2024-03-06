@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #imageContainer {
+            display: flex;
+        }
+
+        .imageBox {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="imageContainer">
+    <div class="imageBox" id="box1"><img src="pic5.jpg" alt="Image 1"></div>
+    <div class="imageBox" id="box2"><img src="pic2.jpg" alt="Image 2"></div>
+    <div class="imageBox" id="box3"><img src="pic4.jpg" alt="Image 3"></div>
+</div>
+
+<button onclick="moveImages()">Move Images</button>
+
+<script>
+    function moveImages() {
+        for (let i = 1; i <= 3; i++) {
+            let currentBox = document.getElementById(`box${i}`);
+            let nextBoxNumber = i % 3 + 1;
+            let nextBox = document.getElementById(`box${nextBoxNumber}`);
+            let currentImage = currentBox.removeChild(currentBox.firstChild);
+            nextBox.appendChild(currentImage);
+        }
+    }
+
+    setInterval(moveImages, 2000);
+</script>
+
+</body>
+</html>

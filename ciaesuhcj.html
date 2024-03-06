@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Random Image Every Seconds</title>
+    <link rel="stylesheet" type="text/css" href="ciaesuhcj.css">
+</head>
+<body>
+    <h1>Show Images</h1>
+    <img src="" id="image">
+
+
+    <script type="text/javascript">
+        let image = document.getElementById('image');
+        let images  = ['face11.jpg', 'face12.jpg','face13.jpg','face14.jpg']
+        setInterval(function(){
+            let random =Math.floor(Math.random( ) * 4);
+            image.src=images[random];
+        }, 800); 
+    </script>
+</body>
+</html>

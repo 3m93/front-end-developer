@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="background-slides">
+        <div class="slide">
+              <img src="e:\Pictures\Saved Pictures\palestine flag.jpg" alt="initial image" />
+         </div>
+   </div>
+   <script >
+    var backgroundSlides = new Array();
+    backgroundSlides.push('e:\Pictures\Saved Pictures\palestine flag.jpg');
+    backgroundSlides.push('e:\Pictures\Saved Pictures\w2.jpg');
+    backgroundSlides.push('e:\Pictures\Saved Pictures\pak flag.jpg');
+
+if ($('#background-slides .slide').length) {
+  $('#background-slides').cycle({
+        speed: 1000,
+        swipe: true,
+        delay: 2000,
+        timeout: 6000,
+        fx: 'zoom',
+        slides: '.slide',
+        next: '.right',
+        prev: '.left'
+    });
+   $.each(backgroundSlides,
+            function (intIndex, objValue) {
+                var newSlide = '<div class="slide"><img src="' + objValue + '" /></div>';
+                $('#background-slides').cycle('add', newSlide);
+            }
+            );
+        }
+   });
+</script>
+</body>
+</html>
