@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>CSS Div Image Hover</title>
+    <style>
+        .container{
+            width: 90%;
+            padding: 20px;
+            margin: 100px auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .box{
+            width: 250px;
+            margin: 0 10px;
+            box-shadow: 0 0 20px 2px rgba(0, 0,0, .1);
+            border-radius: 10px;
+        }
+        .box img{
+            display: block;
+            width: 100%;
+            border-radius: 5px;
+        }
+        .box:hover{
+            transform: scale(1.3);
+            z-index: 2;
+        }
+        .imgstyle{
+            width: 220px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Female Perfumes</h1>
+    <div class="container">
+        
+        <div class="box">
+            <img src="feimg1.jpg">
+            <p>Rs.5490</p>
+        </div>
+        <div class="box">
+            <img src="feimg2.jpg">
+            <p>Rs.5590</p>
+        </div>
+        <div class="box">
+            <img src="feimg3.jpg">
+            <p>Rs.9490</p>
+        </div>
+        <div class="box">
+            <img class="imgstyle"   src="feimg4.jpg">
+            <p>Rs.6490</p>
+        </div>
+        <div class="box">
+            <img class="imgstyle"   src="feimg5.jpg">
+            <p>Rs.59500</p>
+        </div>
+        
+    </div>
+    <div class="container">
+    <div class="box">
+        <img class="imgstyle"    src="feimg6.jpg">
+        <p>Rs.5490</p>
+    </div>
+    <div class="box">
+        <img class="imgstyle"    src="feimg7.jpg">
+        <p>Rs.5590</p>
+    </div>
+    <div class="box">
+        <img class="imgstyle"   src="feimg8.jpg">
+        <p>Rs.9490</p>
+    </div>
+    <div class="box">
+        <img class="imgstyle"    src="feimg9.jpg">
+        <p>Rs.6490</p>
+    </div>
+    <div class="box">
+        <img class="imgstyle"   src="feimg10.jpg">
+        <p>Rs.59500</p>
+    </div>
+    
+</div>
+   <h1>Male Perfumes</h1>
+    <div class="container">
+       
+        <div class="box">
+            <img class="imgstyle"   src="mimg1.jpg">
+            <p>Rs.1640</p>
+        </div>
+        <div class="box">
+            <img class="imgstyle"   src="mimg2.jpg">
+            <p>Rs.640</p>
+        </div>
+        <div class="box">
+            <img class="imgstyle"   src="mimg3.jpg">
+            <p>Rs.640</p>
+        </div>
+        <div class="box">
+            <img class="imgstyle"  src="mimg4.jpg">
+            <p>Rs.640</p>
+        </div>
+        <div class="box">
+            <img class="imgstyle"  src="mimg13.jpg">
+            <p>Rs.640</p>
+        </div>
+       
+    </div>
+    <div class="container">
+        <div class="box">
+            <img src="mimg5.jpg">
+            <p>Rs.1640</p>
+        </div>
+        <div class="box">
+            <img src="mimg6.jpg">
+            <p>Rs.640</p>
+        </div>
+        <div class="box">
+            <img src="mimg7.jpg">
+            <p>Rs.640</p>
+        </div>
+        <div class="box">
+            <img src="mimg8.jpg">
+            <p>Rs.640</p>
+        </div>
+        <div class="box">
+            <img src="mimg12.jpg">
+            <p>Rs.640</p>
+        </div>
+       
+    </div>
+</body>
+</html>
